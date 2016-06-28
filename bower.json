@@ -1,0 +1,21 @@
+{
+  "name": "themecatcher-tabs",
+  "homepage": "https://github.com/ThemeCatcher/tabs",
+  "authors": [
+    "ThemeCatcher <info@themecatcher.net>"
+  ],
+  "description": "A fork of the jQuery Tools Tabs script, using the $.tctabs namespace to avoid conflicts with other tabs scripts.",
+  "main": "tc.tabs.js",
+  "keywords": [
+    "tabs",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
