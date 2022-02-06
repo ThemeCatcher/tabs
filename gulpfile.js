@@ -1,14 +1,24 @@
-var gulp = require('gulp'),
-    rename = require('gulp-rename'),
-    uglify = require('gulp-uglify');
+const { dest, src, watch} = require('gulp');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 
-gulp.task('default', function () {
-    return gulp.src('tc.tabs.js')
-               .pipe(rename({suffix: '.min'}))
-               .pipe(uglify({preserveComments: 'some'}))
-               .pipe(gulp.dest('.'));
-});
+function build(cb) {
+    src('tc.tabs.js')
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify({
+            output: {
+                comments: /^!/
+            }
+        }))
+        .pipe(dest('.'));
 
-gulp.task('watch', function () {
-    gulp.watch('tc.tabs.js', ['default']);
-});
+    cb();
+}
+
+function watcher(cb) {
+    watch('tc.tabs.js', 'build');
+    cb();
+}
+
+exports.default = build;
+exports.watch = watcher;
