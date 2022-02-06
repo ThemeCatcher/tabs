@@ -1,4 +1,4 @@
-/*! ThemeCatcher Tabs v1.0.0 | MIT License | https://github.com/ThemeCatcher/tabs */
+/*! ThemeCatcher Tabs v1.0.1 | MIT License | https://github.com/ThemeCatcher/tabs */
 (function($) {
 
     $.tctabs = {

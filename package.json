@@ -1,6 +1,6 @@
 {
   "name": "themecatcher-tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A fork of the jQuery Tools Tabs script, using the $.tctabs namespace to avoid conflicts with other tabs scripts.",
   "main": "tc.tabs.js",
   "dependencies": {},
