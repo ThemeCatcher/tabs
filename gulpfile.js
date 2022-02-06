@@ -1,4 +1,4 @@
-const { dest, src, watch} = require('gulp');
+const { dest, series, src, watch} = require('gulp');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 
@@ -16,9 +16,9 @@ function build(cb) {
 }
 
 function watcher(cb) {
-    watch('tc.tabs.js', 'build');
+    watch('tc.tabs.js', build);
     cb();
 }
 
 exports.default = build;
-exports.watch = watcher;
+exports.watch = series(build, watcher);
