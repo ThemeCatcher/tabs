@@ -71,8 +71,6 @@
 
     /**
      * Horizontal accordion
-     *
-     * @deprecated will be replaced with a more robust implementation
     */
 
     var
@@ -234,7 +232,7 @@
         $.each("onBeforeClick,onClick".split(","), function(i, name) {
 
             // configuration
-            if ($.isFunction(conf[name])) {
+            if (typeof conf[name] === 'function') {
                 $(self).on(name, conf[name]);
             }
 
@@ -282,7 +280,7 @@
             this.removeData("tabs");
         }
 
-        if ($.isFunction(conf)) {
+        if (typeof conf === 'function') {
             conf = {onBeforeClick: conf};
         }
 
